@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = require("./generateMarkdown");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 const questions = [
   {
     type: "input",
@@ -22,12 +22,7 @@ const questions = [
     name: "usage",
     message: "Enter necessary for use of application:",
   },
-  {
-    type: "list",
-    message: "Select a license badge:",
-    choices: ["Website Down", "Website Up", "NPM Inquirer", "Made With JS"],
-    name: "license",
-  },
+
   {
     type: "input",
     name: "Contributing",
@@ -42,6 +37,12 @@ const questions = [
     type: "input",
     name: "username",
     message: "What is your gitHub username?",
+  },
+  {
+    type: "list",
+    message: "Select a license badge:",
+    choices: ["Website Down", "Website Up", "NPM Inquirer", "Made With JS"],
+    name: "license",
   },
 ];
 
