@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = require("./utils/generateMarkdown");
+const generateMarkdown = require("./generateMarkdown");
 const questions = [
   {
     type: "input",
@@ -14,49 +14,35 @@ const questions = [
   },
   {
     type: "input",
-    name: "TOC",
-    message: "How would you description your project?",
+    name: "Installation",
+    message: "Enter command to install necessary dependencies:",
   },
-  // {
-  //   type: "input",
-  //   name: "Installation",
-  //   message: "How would you description your project?",
-  // },
-  // {
-  //   type: "input",
-  //   name: "usage",
-  //   message: "How would you description your project?",
-  // },
-  // {
-  //   type: "input",
-  //   name: "License",
-  //   message: "How would you description your project?",
-  // },
-  // {
-  //   type: "input",
-  //   name: "Contributing",
-  //   message: "How would you description your project?",
-  // },
-  // {
-  //   type: "input",
-  //   name: "Test",
-  //   message: "How would you description your project?",
-  // },
-  // {
-  //   type: "input",
-  //   name: "Questions",
-  //   message: "How would you description your project?",
-  // },
-  // {
-  //   type: "input",
-  //   name: "User Github portfolio picture",
-  //   message: "How would you description your project?",
-  // },
-  // {
-  //   type: "input",
-  //   name: "user Github email",
-  //   message: "How would you description your project?",
-  // },
+  {
+    type: "input",
+    name: "usage",
+    message: "Enter necessary for use of application:",
+  },
+  {
+    type: "list",
+    message: "Select a license badge:",
+    choices: ["Website Down", "Website Up", "NPM Inquirer", "Made With JS"],
+    name: "license",
+  },
+  {
+    type: "input",
+    name: "Contributing",
+    message: "Describe contribution details:",
+  },
+  {
+    type: "input",
+    name: "Test",
+    message: "Provide prompt to start testing suite:",
+  },
+  {
+    type: "input",
+    name: "username",
+    message: "What is your gitHub username?",
+  },
 ];
 
 function writeToFile(fileName, data) {
@@ -75,9 +61,7 @@ function init() {
 
     .catch((error) => {
       if (error.isTtyError) {
-        // Prompt couldn't be rendered in the current environment
       } else {
-        // Something else when wrong
       }
     });
 }
