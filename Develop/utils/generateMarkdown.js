@@ -1,13 +1,20 @@
 function generateMarkdown(data) {
   return `
 # ${data.project}
-## ${data.Description}
-## ${data.Installation}
-## ${data.usage}
-## ${data.Contributing}
-## ${data.Test}
-## ${data.username}
-## ${data.license}
+## Description
+ ${data.Description}
+## Installation
+${data.Installation}
+## usage
+${data.usage}
+## Contributing
+${data.Contributing}
+## Test
+${data.Test}
+## username
+${data.username}
+## license
+${data.license}
 
 `;
 }
