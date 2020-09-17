@@ -68,6 +68,14 @@ function init() {
     });
 }
 async function gitHubRequest(userName) {
+  const answer = await inquirer.prompt(questions);
+  console.log(answer);
+  const data = await gitHubRequest(answer.userName);
+  console.log(data);
+  answer.gitHub = { profilePicture: data.avatar_url, email: data.email };
+  console.log(answer);
+  writeToFile("readme.md", answer);
+
   let result;
   const queryUrl = `https://api.github.com/users/${userName}`;
   try {

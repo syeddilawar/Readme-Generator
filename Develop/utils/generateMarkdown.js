@@ -15,6 +15,7 @@ ${data.Test}
 ${data.username}
 ## license
 ${data.license}
+![Image of user](${data.gitHub.profilePicture})
 
 `;
 }
