@@ -66,5 +66,16 @@ function init() {
       }
     });
 }
+async function gitHubRequest(userName) {
+  let result;
+  const queryUrl = `https://api.github.com/users/${userName}`;
+  try {
+    const { data } = await axios.get(queryUrl);
+    result = data;
+  } catch (e) {
+    console.log(e);
+  }
+  return result;
+}
 
 init();
