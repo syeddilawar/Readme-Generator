@@ -1,7 +1,11 @@
+const util = require("util");
 const inquirer = require("inquirer");
 const fs = require("fs");
 const axios = require("axios");
 const generateMarkdown = require("./utils/generateMarkdown.js");
+const path = require("path");
+const writeFileAsync = util.promisify(fs.writeFile);
+
 const questions = [
   {
     type: "input",
@@ -49,16 +53,21 @@ const questions = [
 
 function writeToFile(fileName, data) {
   console.log(data);
-  return fs.writeFileSync(fileName, data);
+  
+  writeFileAsync(fileName, data);
 }
 
 function init() {
   inquirer
     .prompt(questions)
     .then((answers) => {
-      console.log(answers);
+      // console.log(answers);
+      console.log("i m here");
 
-      writeToFile("readme.md", generateMarkdown(answers));
+      const data = generateMarkdown(answers);
+      console.log(typeof data);
+
+      writeToFile("readme.md", data);
     })
 
     .catch((error) => {
