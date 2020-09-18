@@ -1,25 +1,30 @@
 
-  # ff
+  # rr
 
   ## Description
-   rr
+   ee
 
   ## Installation
-  ee
+  tt
 
   ## usage
   dd
 
   ## Contributing
-  tt
+  ee
 
   ## Test
-  gg
+  ff
 
   ## username
-  ddd
+  syeddilawar
 
   ## license
-  NPM Inquirer
+  Made With JS
   
+  ## Questions
+  You can always reach me at this github profile https://github.com/syeddilawar
+ <br>
+  My profile picture
+  ![My profile picture](https://avatars0.githubusercontent.com/u/66503170?v=4)
   

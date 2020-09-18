@@ -24,8 +24,11 @@ function generateMarkdown(data) {
   ## license
   ${data.license}
   
+  ## Questions
+  You can always reach me at this github profile https://github.com/${data.githubData.login}
+ <br>
+  My profile picture
+  ![My profile picture](${data.githubData.avatar_url})
   `;
 }
 module.exports = generateMarkdown;
-
-// ![Image of user](${data.gitHub.profilePicture})

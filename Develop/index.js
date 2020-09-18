@@ -53,47 +53,27 @@ const questions = [
 
 function writeToFile(fileName, data) {
   console.log(data);
-  
+
   writeFileAsync(fileName, data);
 }
 
-function init() {
-  inquirer
-    .prompt(questions)
-    .then((answers) => {
-      // console.log(answers);
-      console.log("i m here");
-
-      const data = generateMarkdown(answers);
-      console.log(typeof data);
-
-      writeToFile("readme.md", data);
-    })
-
-    .catch((error) => {
-      if (error.isTtyError) {
-      } else {
-      }
-    });
-}
-async function gitHubRequest(userName) {
-  const answer = await inquirer.prompt(questions);
-  console.log(answer);
-  const data = await gitHubRequest(answer.userName);
-  console.log(data);
-  answer.gitHub = { profilePicture: data.avatar_url, email: data.email };
-  console.log(answer);
-  writeToFile("readme.md", answer);
-
+async function init() {
   let result;
-  const queryUrl = `https://api.github.com/users/${userName}`;
+  const answers = await inquirer.prompt(questions);
+
+  const queryUrl = `https://api.github.com/users/${answers.username}`;
   try {
     const { data } = await axios.get(queryUrl);
     result = data;
   } catch (e) {
     console.log(e);
   }
-  return result;
+  answers.githubData = result;
+  console.log(result);
+
+  const answerdata = generateMarkdown(answers);
+  
+  writeToFile("readme.md", answerdata);
 }
 
 init();
