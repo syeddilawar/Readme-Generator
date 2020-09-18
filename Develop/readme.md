@@ -1,26 +1,27 @@
 
-  # rr
+  # Project
+   README Generator
 
   ## Description
-   ee
+   This generator uses inquirer to prompt questions to user. The inputs are obtained and used to generate a well formated README file for users repo.
 
   ## Installation
-  tt
+  To install neccessary dependencies, run the following command: npm i
 
   ## usage
-  dd
+  Please install npm, inquirer, and axios.
 
   ## Contributing
-  ee
+  Single contributor
 
   ## Test
-  ff
+  To run tests, run the following command: NA
 
   ## username
   syeddilawar
 
   ## license
-  Made With JS
+  NPM Inquirer
   
   ## Questions
   You can always reach me at this github profile https://github.com/syeddilawar

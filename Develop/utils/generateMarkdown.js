@@ -1,7 +1,8 @@
 function generateMarkdown(data) {
   // console.log(data);
   return `
-  # ${data.project}
+  # Project
+   ${data.project}
 
   ## Description
    ${data.Description}
